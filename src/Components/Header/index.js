@@ -12,11 +12,11 @@ const statusBarHeight = StatusBar.currentHeight
   ? StatusBar.currentHeight + 22
   : 64;
 
-export default function Header() {
+export default function Header({ name }) {
   return (
     <View style={styles.container}>
       <View style={styles.content}>
-        <Text style={styles.username}>Ruben Fábio</Text>
+        <Text style={styles.username}>{name}</Text>
 
         <TouchableOpacity activeOpacity={0.9} style={styles.buttonUser}>
           <Feather name="user" size={27} color="#FFF" />
@@ -40,5 +40,18 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     flexDirection: 'row',
     justifyContent: 'space-between',
+  },
+  username: {
+    color: 'white',
+    fontSize: 18,
+    fontWeight: 'bold',
+  },
+  buttonUser: {
+    width: 44,
+    height: 44,
+    backgroundColor: 'rgba(255,255,255, 0.5)',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 44 / 2,
   },
 });
